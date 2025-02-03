@@ -52,7 +52,7 @@ Options:
 
 Example:
   $0 -d logs -k error
-  $0 -f script.sh -k TODO
+  $0 -f script.sh -k echo
 EOF
 }
 
