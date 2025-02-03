@@ -23,9 +23,6 @@ if [ ! -d "$BACKUP_DIR" ]; then
     mkdir -p "$BACKUP_DIR" || { echo "Error: Failed to create backup directory."; exit 1; }
 fi
 
-# 1 way to find files 
-# mapfile -t FILES < <(find "$SOURCE_DIR" -maxdepth 1 -type f -name "*$EXTENSION")
-
 
 # Checking the files using Globing as stated
 FILES=("$SOURCE_DIR"/*"$EXTENSION")
@@ -42,7 +39,7 @@ TOTAL_SIZE=0
 
 # Perform backup
 for FILE in "${FILES[@]}"; do
-    BASENAME=$(basename "$FILE")
+    BASENAME=$(basename "$FILE") # equals to awk -F/ '{print $NF}'
     DEST_FILE="$BACKUP_DIR/$BASENAME"
     FILE_SIZE=$(stat -c%s "$FILE")
     echo "Backing up: $BASENAME ($FILE_SIZE bytes)"
