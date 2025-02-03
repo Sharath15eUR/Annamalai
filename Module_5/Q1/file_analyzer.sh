@@ -65,7 +65,6 @@ validate_input() {
     fi
 }
 
-shift $((OPTIND - 1))
 
 if [[ "$1" == "--help" ]]; then
     show_help
