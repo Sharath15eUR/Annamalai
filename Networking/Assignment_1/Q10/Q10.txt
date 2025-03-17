@@ -1,0 +1,6 @@
+Q10.
+
+Dynamic Host Configuration Protocol (DHCP):
+
+
+The Dynamic Host Configuration Protocol (DHCP) is a crucial networking protocol that operates at the application layer using UDP (port 67 for the server, port 68 for the client). It plays a vital role in dynamically assigning IP addresses and other network configurations to devices, eliminating the need for manual setup. This protocol follows a client-server architecture, where a DHCP server maintains a pool of available IP addresses and assigns them to requesting DHCP clients. The entire process relies on the DORA (Discover, Offer, Request, Acknowledge) sequence, ensuring seamless allocation and management of IP addresses within a network. Since IP addresses are granted on a lease basis, clients must renew their lease before it expires to maintain connectivity. Additionally, DHCP helps streamline network administration, reducing human errors while ensuring efficient utilization of available IP addresses. However, security risks such as rogue DHCP servers, denial-of-service (DoS) attacks, and IP conflicts remain challenges that require proper network security measures like authentication and IP address filtering.

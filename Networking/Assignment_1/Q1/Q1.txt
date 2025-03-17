@@ -1,0 +1,116 @@
+1) Copying file 
+	a)Local - cp
+	b)Remote Machine - SCP (Over SSH)
+
+a) Local - cp
+cp [options] source destination
+
+
+TERMINAL
+
+annamalai@Annamalai:~$ ls
+127.0.0.1     Documents    Networking  result-2024-WD-0-20240902.json
+127.1.1.1     Downloads    pico_ws     snap
+8.8.8.8       example1.sh  Pictures    Templates
+checkping.sh  Linux        Public      turtlesim_ws
+Desktop       Music        README.md   Videos
+annamalai@Annamalai:~$ cd Linux/
+annamalai@Annamalai:~/Linux$ ls
+check.sh  learn  Module_1  Module_2  Module_3  Module_4  Module_5  ref.sh
+annamalai@Annamalai:~/Linux$ cd ..
+annamalai@Annamalai:~$ mkdir Linux_1
+annamalai@Annamalai:~$ ls
+127.0.0.1     Documents    Music       README.md                       Videos
+127.1.1.1     Downloads    Networking  result-2024-WD-0-20240902.json
+8.8.8.8       example1.sh  pico_ws     snap
+checkping.sh  Linux        Pictures    Templates
+Desktop       Linux_1      Public      turtlesim_ws
+annamalai@Annamalai:~$ cd -r $PWD/Linux $PWD/Linux_1
+bash: cd: -r: invalid option
+cd: usage: cd [-L|[-P [-e]] [-@]] [dir]
+annamalai@Annamalai:~$ cp -r $PWD/Linux $PWD/Linux_1
+annamalai@Annamalai:~$ cd Linux_1
+annamalai@Annamalai:~/Linux_1$ ls
+Linux
+annamalai@Annamalai:~/Linux_1$ cd Linux/
+annamalai@Annamalai:~/Linux_1/Linux$ ls
+check.sh  learn  Module_1  Module_2  Module_3  Module_4  Module_5  ref.sh
+annamalai@Annamalai:~/Linux_1/Linux$ 
+
+
+2) scp
+
+Setting up ssh connection
+
+sudo apt update
+sudo apt install openssh-server -y
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
+SCP Syntax
+
+scp [options] source user@remote_host:/remote/destination
+
+
+TERMINAL
+
+annamalai@Annamalai:~/Linux_1/Linux$ cd ..
+annamalai@Annamalai:~/Linux_1$ scp -r $PWD adhul@10.11.232.253:/home/adhul/network
+The authenticity of host '10.11.232.253 (10.11.232.253)' can't be established.
+ED25519 key fingerprint is SHA256:VGx+Xtme835DT4KzSmQzxBKkkKskUCgDCpE8Bu9kE4I.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added '10.11.232.253' (ED25519) to the list of known hosts.
+adhul@10.11.232.253's password: 
+filtered_log.txt                                                                                               100%  148    31.9KB/s   00:00    
+q3.txt                                                                                                         100% 2643   317.3KB/s   00:00    
+logfile.txt                                                                                                    100%  678   104.3KB/s   00:00    
+q1_terminal.txt                                                                                                100% 1835   313.8KB/s   00:00    
+q1.txt                                                                                                         100%   66    13.8KB/s   00:00    
+q4.txt                                                                                                         100%   36KB   1.5MB/s   00:00    
+config.txt                                                                                                     100%  160    12.2KB/s   00:00    
+updated_config.txt                                                                                             100%  160    34.3KB/s   00:00    
+q2.txt                                                                                                         100%  830   232.5KB/s   00:00    
+q5.txt                                                                                                         100%  911   163.3KB/s   00:00    
+q5.txt                                                                                                         100%  911   199.5KB/s   00:00    
+errors.log                                                                                                     100%  541   147.5KB/s   00:00    
+file_analyzer.sh                                                                                               100% 2205   284.5KB/s   00:00    
+q4.txt                                                                                                         100%   36KB   2.2MB/s   00:00    
+q1_terminal.txt                                                                                                100% 1835   413.8KB/s   00:00    
+q1.txt                                                                                                         100%   66    18.9KB/s   00:00    
+filtered_log.txt                                                                                               100%  148    33.1KB/s   00:00    
+q3.txt                                                                                                         100% 2643   489.5KB/s   00:00    
+logfile.txt                                                                                                    100%  678   128.7KB/s   00:00    
+Q1.txt                                                                                                         100% 2399   314.3KB/s   00:00    
+config.txt                                                                                                     100%  160    21.2KB/s   00:00    
+updated_config.txt                                                                                             100%  160    35.2KB/s   00:00    
+q2.txt                                                                                                         100%  830   175.1KB/s   00:00    
+shlink.txt                                                                                                     100%  760   111.8KB/s   00:00    
+q3.txt                                                                                                         100%  760   133.3KB/s   00:00    
+q1.txt                                                                                                         100%  585   126.6KB/s   00:00    
+q4.txt                                                                                                         100% 1550   327.0KB/s   00:00    
+q2.txt                                                                                                         100%  571   122.4KB/s   00:00    
+2.txt                                                                                                          100%    0     0.0KB/s   00:00    
+q5.txt                                                                                                         100% 1149   268.5KB/s   00:00    
+3.txt                                                                                                          100%    0     0.0KB/s   00:00    
+1.txt                                                                                                          100%  170    22.7KB/s   00:00    
+output1.txt                                                                                                    100%   41KB   3.5MB/s   00:00    
+script.sh                                                                                                      100%  632   110.0KB/s   00:00    
+output.txt                                                                                                     100%   40KB   2.7MB/s   00:00    
+Q1.txt                                                                                                         100%  406    60.2KB/s   00:00    
+ref.sh                                                                                                         100% 1866   218.5KB/s   00:00    
+test.sh                                                                                                        100%   30     6.8KB/s   00:00    
+backup_report.log                                                                                              100%  142    42.2KB/s   00:00    
+f3.txt                                                                                                         100%   36     3.9KB/s   00:00    
+f2.txt                                                                                                         100%   22     5.4KB/s   00:00    
+f1.txt                                                                                                         100%   14     2.0KB/s   00:00    
+backup_manager.sh                                                                                              100% 2189   297.0KB/s   00:00    
+Q1.txt                                                                                                         100%  862   158.3KB/s   00:00    
+f3.txt                                                                                                         100%   36     6.9KB/s   00:00    
+f2.txt                                                                                                         100%   22     4.8KB/s   00:00    
+f1.txt                                                                                                         100%   14     3.8KB/s   00:00    
+check.sh                                                                                                       100% 1782   510.0KB/s   00:00    
+annamalai@Annamalai:~/Linux_1$ 
+
+

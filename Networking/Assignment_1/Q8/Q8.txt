@@ -1,0 +1,50 @@
+
+iwconfig
+
+annamalai@Annamalai:~$ if config
+> ^C
+annamalai@Annamalai:~$ ifconfig
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 6432  bytes 973382 (973.3 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 6432  bytes 973382 (973.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp0s20f3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.11.238.118  netmask 255.255.128.0  broadcast 10.11.255.255
+        inet6 fe80::2bcd:2f7:9b5:6804  prefixlen 64  scopeid 0x20<link>
+        ether 94:e2:3c:36:01:3c  txqueuelen 1000  (Ethernet)
+        RX packets 749640  bytes 1103453466 (1.1 GB)
+        RX errors 0  dropped 21  overruns 0  frame 0
+        TX packets 114205  bytes 18732714 (18.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+annamalai@Annamalai:~$ ifconfig wlp0s20f3
+wlp0s20f3: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 10.11.238.118  netmask 255.255.128.0  broadcast 10.11.255.255
+        inet6 fe80::2bcd:2f7:9b5:6804  prefixlen 64  scopeid 0x20<link>
+        ether 94:e2:3c:36:01:3c  txqueuelen 1000  (Ethernet)
+        RX packets 749688  bytes 1103465137 (1.1 GB)
+        RX errors 0  dropped 23  overruns 0  frame 0
+        TX packets 114242  bytes 18741132 (18.7 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+annamalai@Annamalai:~$ iwconfig
+lo        no wireless extensions.
+
+wlp0s20f3  IEEE 802.11  ESSID:"TCE"  
+          Mode:Managed  Frequency:2.462 GHz  Access Point: 70:F3:5A:9C:C7:A0   
+          Bit Rate=52 Mb/s   Tx-Power=22 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          Link Quality=58/70  Signal level=-52 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+annamalai@Annamalai:~$ iwconfig wlp0s20f3 | grep -i "bit rate"
+          Bit Rate=52 Mb/s   Tx-Power=22 dBm   
+annamalai@Annamalai:~$ 
+
