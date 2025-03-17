@@ -1,0 +1,60 @@
+annamalai@Annamalai:~$ nslookup www.google.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	www.google.com
+Address: 142.250.196.164
+Name:	www.google.com
+Address: 2404:6800:4007:82c::2004
+
+annamalai@Annamalai:~$ nsookup www.facebook.com
+Command 'nsookup' not found, did you mean:
+  command 'nslookup' from deb bind9-dnsutils (1:9.18.30-0ubuntu0.24.04.2)
+Try: sudo apt install <deb name>
+annamalai@Annamalai:~$ nslookup www.facebook.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.facebook.com	canonical name = star-mini.c10r.facebook.com.
+Name:	star-mini.c10r.facebook.com
+Address: 157.240.192.35
+Name:	star-mini.c10r.facebook.com
+Address: 2a03:2880:f137:182:face:b00c:0:25de
+
+annamalai@Annamalai:~$ nslookup www.amazon.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.amazon.com	canonical name = tp.47cf2c8c9-frontier.amazon.com.
+tp.47cf2c8c9-frontier.amazon.com	canonical name = www-amazon-com.customer.fastly.net.
+Name:	www-amazon-com.customer.fastly.net
+Address: 162.219.225.118
+Name:	www-amazon-com.customer.fastly.net
+Address: 2606:2cc0:2::374
+Name:	www-amazon-com.customer.fastly.net
+Address: 2606:2cc0:3::374
+Name:	www-amazon-com.customer.fastly.net
+Address: 2606:2cc0::374
+Name:	www-amazon-com.customer.fastly.net
+Address: 2606:2cc0:1::374
+
+annamalai@Annamalai:~$ nslookup www.cisco.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.cisco.com	canonical name = www.cisco.com.akadns.net.
+www.cisco.com.akadns.net	canonical name = wwwds.cisco.com.edgekey.net.
+wwwds.cisco.com.edgekey.net	canonical name = wwwds.cisco.com.edgekey.net.globalredir.akadns.net.
+wwwds.cisco.com.edgekey.net.globalredir.akadns.net	canonical name = e2867.dsca.akamaiedge.net.
+Name:	e2867.dsca.akamaiedge.net
+Address: 23.217.154.126
+Name:	e2867.dsca.akamaiedge.net
+Address: 2600:140f:6600:289::b33
+Name:	e2867.dsca.akamaiedge.net
+Address: 2600:140f:6600:284::b33
+
+

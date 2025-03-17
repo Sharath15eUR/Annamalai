@@ -1,0 +1,31 @@
+TRACEROUTE TO GOOGLE.COM AND ANALYSE ITS OUTPUT
+
+TRACEROUTE : 
+
+1. Traceroute is a network diagnostic tool used to track the path that packets take from a      source to a destination. It helps identify network delays, routing loops, and points of failure by displaying each hop (intermediate router) that the packet traverses.
+
+2. Traceroute works by using TTL of packets. that is, at first, source sends packet with TTL = 1 thus, probably default gateway receives and decrements TTL to 0. thereby discarding it. Due to this, router sends ICMP time exceeded message to source and traceroute records the RTT and router's IP. traceroute sends ICMP echo requests or udp packets in 33434 - 33534 port range.
+
+3. Now, it increments TTL by 1 and repeats the above step until 30 hops are achieved.
+
+4. * * * -> in traceroute means that packet got lost or firewall blocks packet. 
+
+5. !<N/H/P> -> Network/Host/Protocol is unreachable.
+
+6. !X -> administratively prohibited.
+
+annamalai@Annamalai:~$ traceroute google.com
+traceroute to google.com (142.250.195.142), 30 hops max, 60 byte packets
+ 1  _gateway (10.11.128.1)  3.043 ms  3.000 ms  2.984 ms
+ 2  117.232.96.193 (117.232.96.193)  5.097 ms  5.080 ms  5.063 ms
+ 3  172.24.67.226 (172.24.67.226)  5.044 ms  5.027 ms  5.009 ms
+ 4  * * *
+ 5  * * *
+ 6  142.250.160.26 (142.250.160.26)  12.831 ms  12.198 ms  14.243 ms
+ 7  * * *
+ 8  142.250.224.6 (142.250.224.6)  11.048 ms 142.251.55.30 (142.251.55.30)  12.311 ms 142.251.55.224 (142.251.55.224)  12.292 ms
+ 9  142.251.230.90 (142.251.230.90)  14.704 ms 142.251.55.63 (142.251.55.63)  13.233 ms  13.192 ms
+10  142.250.208.231 (142.250.208.231)  14.175 ms maa03s40-in-f14.1e100.net (142.250.195.142)  14.198 ms 142.250.239.229 (142.250.239.229)  14.178 ms
+annamalai@Annamalai:~$ 
+
+
